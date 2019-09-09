@@ -1,4 +1,4 @@
-package petshop;
+package Java;
 
 /**
  *
