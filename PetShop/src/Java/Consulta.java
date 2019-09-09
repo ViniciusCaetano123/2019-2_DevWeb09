@@ -5,6 +5,7 @@ package Java;
  * @author edugu
  */
 public class Consulta {
+
     private static int idmestre;
     private final int id;
     private int idcliente, idservico, idfuncionario, ano, mes, dia, hora;
@@ -93,5 +94,5 @@ public class Consulta {
     public void setHora(int hora) {
         this.hora = hora;
     }
-    
+
 }

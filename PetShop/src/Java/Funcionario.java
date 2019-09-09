@@ -7,14 +7,14 @@ import java.util.*;
  * @author edugu
  */
 public class Funcionario {
-    
+
     private static int idmestre;
     private final int id;
     private int rg, cpf, numeroendereco, cep, telefone;
     private String nacionalidade, uf, nome, sexo, estadocivil, rua, complemento, municipio, bairro, email;
-    private boolean habilitado =  true;
+    private boolean habilitado = true;
     private Date nascimento;
-    
+
     public Funcionario(int rg, int cpf, int numeroendereco, int cep, int telefone, Date nascimento, String nacionalidade, String uf, String nome, String sexo, String estadocivil, String rua, String complemento, String municipio, String bairro, String email) {
         id = idmestre + 1;
         idmestre = id;
@@ -35,15 +35,15 @@ public class Funcionario {
         this.bairro = bairro;
         this.email = email;
     }
-    
-     public boolean isHabilitado() {
+
+    public boolean isHabilitado() {
         return habilitado;
     }
 
     public void setHabilitado(boolean habilitado) {
         this.habilitado = habilitado;
     }
-    
+
     public int getRg() {
         return rg;
     }
@@ -95,7 +95,7 @@ public class Funcionario {
     public Date getNascimento() {
         return nascimento;
     }
-    
+
     public void setNascimento(Date nascimento) {
         this.nascimento = nascimento;
     }

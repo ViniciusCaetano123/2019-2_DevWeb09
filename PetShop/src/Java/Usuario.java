@@ -5,20 +5,19 @@ package Java;
  * @author edugu
  */
 public class Usuario {
-        
+
     private static int idmestre;
     private final int id;
     private String nome, login, email;
 
-    public Usuario(String nome, String login, String email)
-    {
+    public Usuario(String nome, String login, String email) {
         id = idmestre + 1;
         idmestre = id;
         this.nome = nome;
         this.login = login;
         this.email = email;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -26,7 +25,6 @@ public class Usuario {
     public static int getIdmestre() {
         return idmestre;
     }
-
 
     public String getNome() {
         return nome;
@@ -51,5 +49,5 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-        
+
 }

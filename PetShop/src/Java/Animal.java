@@ -5,6 +5,7 @@ package Java;
  * @author edugu
  */
 public class Animal {
+
     private static int idmestre;
     private final int id;
     private int idcliente;
@@ -67,5 +68,5 @@ public class Animal {
     public void setPorte(String porte) {
         this.porte = porte;
     }
-       
+
 }

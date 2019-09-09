@@ -5,7 +5,7 @@ package Java;
  * @author edugu
  */
 public class Servico {
-    
+
     private static int idmestre;
     private final int id;
     private String descricao;
@@ -18,8 +18,8 @@ public class Servico {
         this.descricao = descricao;
         this.valor = valor;
     }
-    
-        public boolean isHabilitado() {
+
+    public boolean isHabilitado() {
         return habilitado;
     }
 
@@ -50,5 +50,5 @@ public class Servico {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    
+
 }
