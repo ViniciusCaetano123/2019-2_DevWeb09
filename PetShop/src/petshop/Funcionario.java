@@ -4,14 +4,15 @@ package petshop;
  *
  * @author edugu
  */
-public class Cliente {
+public class Funcionario {
+    
     private static int idmestre;
     private final int id;
     private int rg, cpf, numeroendereco, cep, telefone;
     private String nascimento, nacionalidade, uf, nome, sexo, estadocivil, rua, complemento, municipio, bairro, email;
 
-    public Cliente(int rg, int cpf, int numeroendereco, int cep, int telefone, String nascimento, String nacionalidade, String uf, String nome, String sexo, String estadocivil, String rua, String complemento, String municipio, String bairro, String email) {
-        id = idmestre +1;
+    public Funcionario(int rg, int cpf, int numeroendereco, int cep, int telefone, String nascimento, String nacionalidade, String uf, String nome, String sexo, String estadocivil, String rua, String complemento, String municipio, String bairro, String email) {
+        id = idmestre + 1;
         idmestre = id;
         this.rg = rg;
         this.cpf = cpf;
@@ -30,6 +31,10 @@ public class Cliente {
         this.bairro = bairro;
         this.email = email;
     }
+    
+    public int getRg() {
+        return rg;
+    }
 
     public static int getIdmestre() {
         return idmestre;
@@ -37,10 +42,6 @@ public class Cliente {
 
     public int getId() {
         return id;
-    }
-
-    public int getRg() {
-        return rg;
     }
 
     public void setRg(int rg) {
