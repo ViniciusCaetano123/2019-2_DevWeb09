@@ -10,7 +10,8 @@ public class Funcionario {
     private final int id;
     private int rg, cpf, numeroendereco, cep, telefone;
     private String nascimento, nacionalidade, uf, nome, sexo, estadocivil, rua, complemento, municipio, bairro, email;
-
+    private boolean habilitado =  true;
+    
     public Funcionario(int rg, int cpf, int numeroendereco, int cep, int telefone, String nascimento, String nacionalidade, String uf, String nome, String sexo, String estadocivil, String rua, String complemento, String municipio, String bairro, String email) {
         id = idmestre + 1;
         idmestre = id;
@@ -30,6 +31,14 @@ public class Funcionario {
         this.municipio = municipio;
         this.bairro = bairro;
         this.email = email;
+    }
+    
+     public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(boolean habilitado) {
+        this.habilitado = habilitado;
     }
     
     public int getRg() {

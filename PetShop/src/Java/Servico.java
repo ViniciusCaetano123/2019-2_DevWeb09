@@ -10,12 +10,21 @@ public class Servico {
     private final int id;
     private String descricao;
     private double valor;
+    private boolean habilitado = true;
 
     public Servico(String descricao, double valor) {
         id = idmestre + 1;
         idmestre = id;
         this.descricao = descricao;
         this.valor = valor;
+    }
+    
+        public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public static int getIdmestre() {

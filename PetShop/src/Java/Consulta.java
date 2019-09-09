@@ -4,11 +4,11 @@ package Java;
  *
  * @author edugu
  */
-
 public class Consulta {
     private static int idmestre;
     private final int id;
     private int idcliente, idservico, idfuncionario, ano, mes, dia, hora;
+    private boolean marcada = true;
 
     public Consulta(int idcliente, int idservico, int idfuncionario, int ano, int mes, int dia, int hora) {
         id = idmestre + 1;
@@ -20,6 +20,14 @@ public class Consulta {
         this.mes = mes;
         this.dia = dia;
         this.hora = hora;
+    }
+
+    public boolean isMarcada() {
+        return marcada;
+    }
+
+    public void setMarcada(boolean marcada) {
+        this.marcada = marcada;
     }
 
     public int getId() {
