@@ -25,18 +25,25 @@
 				  </p>
 				</div>
 		      <div class="panel-body">
-			      <form action="efetuaLogin" method="post" >
+			      <form action="adicionaUsuario" method="post" >
 				     <fieldset>
+				     	<div class="form-group">
+	                  		<input class="form-control" placeholder="Nome" name="nome" type="text" autofocus>
+	                    </div>
 						<div class="form-group">
 	                  		<input class="form-control" placeholder="Login" name="login" type="text" autofocus>
+	                    </div>
+	                    <div class="form-group">
+	                  		<input class="form-control" placeholder="E-mail" name="email" type="text" autofocus>
 	                    </div>
 						<div class="form-group">
 	                    	<input class="form-control" placeholder="Senha" name="senha" type="password" value="">
 	                    </div>
 							<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
 						<div class="text-center">
+						<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
 								<br />
-									<a href="novoUsuario" >Cadastrar</a>
+									<a href="loginForm" >Voltar</a>
 								</div>
 						</fieldset>
 					</form>
