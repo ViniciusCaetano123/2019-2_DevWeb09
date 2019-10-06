@@ -8,15 +8,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sistema Cadastro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<h3>Acesso ao Sistema</h3>
-	<form action="efetuaLogin" method="post" >
-		<label>Login:</label><br />
-		<input name="login" > <br/>
-		<label>Senha:</label><br />
-		<input name="senha" type="password" value=""><br/><br/>
-		<input type="submit" value="Entrar">
-	</form>
+<body style="background:#f2f2f2;">
+	<div class="container">	
+		<div class="row">
+		 <div class="col-md-4 col-md-offset-4" style="margin-top:7% ">
+			<div class="panel panel-primary">
+		      <div class="panel-heading">	
+			      <p align="center">	     
+			      		<img align="center" src="https://d1icd6shlvmxi6.cloudfront.net/gsc/B6VLSH/19/de/25/19de2588b79e4845bcd63a87f7c7ae2e/images/login/u2.jpg?token=cfc9a126b7da73d168441bd9151c4cb8263aad9d3880cee8220c0c9b6bb00c09" style="width: 156px;
+				    height: 133px;">
+				  </p>
+				</div>
+		      <div class="panel-body">
+			      <form action="efetuaLogin" method="post" >
+				     <fieldset>
+						<div class="form-group">
+	                  		<input class="form-control" placeholder="Login" name="login" type="text" autofocus>
+	                    </div>
+						<div class="form-group">
+	                    	<input class="form-control" placeholder="Senha" name="senha" type="password" value="">
+	                    </div>
+							<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
+						<div class="text-center">
+								<br />
+									<a href="mostraTelaEnviarEmail" >Esqueci minha senha</a></br>
+									<a href="novoUsuario" >Criar conta</a>
+								</div>
+						</fieldset>
+					</form>
+				</div>
+		    </div>
+		    </div>
+	    </div>
+    </div>
 </body>
 </html>

@@ -29,8 +29,8 @@ public class UsuarioDAO {
 	}
 	
 	public void adiciona(br.com.petshop.model.Usuario usuario){
-		String sql = "insert into usuarios (nome, login , senha, email) " +
-					"values (?, ?, MD5(?), ?, ?)";
+		String sql = "insert into usuario (nome, login , senha, email) " +
+					"values (?, ?, ?, ?, ?)";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class UsuarioDAO {
 		try{
 			List<Usuario> usuarios = new ArrayList<Usuario>();
 			PreparedStatement stmt = this.connection.prepareStatement
-			("SELECT * FROM usuarios");
+			("SELECT * FROM usuario");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
@@ -74,7 +74,7 @@ public class UsuarioDAO {
 	public void remove(Usuario usuario){
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement
-			("delete from usuarios where id = ?");
+			("delete from usuario where id = ?");
 			
 			stmt.setLong(1, usuario.getId());
 			stmt.execute();
@@ -89,7 +89,7 @@ public class UsuarioDAO {
 	public Usuario buscaPorId(Long id){
 		
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from usuarios");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from usuario");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
@@ -115,7 +115,7 @@ public class UsuarioDAO {
 	
 	
 	public void altera(Usuario usuario){
-		String sql = "update usuarios set nome=? , login=?, senha=MD5(?), email=? where id=?";
+		String sql = "update usuario set nome=? , login=?, senha=?, email=? where id=?";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);

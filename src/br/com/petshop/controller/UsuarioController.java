@@ -25,12 +25,12 @@ public class UsuarioController {
 
 	@RequestMapping("novoUsuario")
 	public String form() {
-		return "usuario/formulario";
+		return "login/formulario-cadastro";
 	}
 	
 	@RequestMapping("adicionaUsuario")
 	public String adiciona(@Valid Usuario usuario, BindingResult result) throws ClassNotFoundException {
-		if(result.hasFieldErrors("nome") || result.hasFieldErrors("login") || result.hasFieldErrors("senha") || result.hasFieldErrors("dataNascimento") || result.hasFieldErrors("altura")) {
+		if(result.hasFieldErrors("nome") || result.hasFieldErrors("login") || result.hasFieldErrors("senha") || result.hasFieldErrors("email")) {
 			 return "usuario/formulario";
 	     }
 		daoUsuario.adiciona(usuario);
