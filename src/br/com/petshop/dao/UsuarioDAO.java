@@ -30,7 +30,7 @@ public class UsuarioDAO {
 	
 	public void adiciona(br.com.petshop.model.Usuario usuario){
 		String sql = "insert into usuario (nome, login , senha, email) " +
-					"values (?, ?, ?, ?, ?)";
+					"values (?, ?, ?, ?)";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);

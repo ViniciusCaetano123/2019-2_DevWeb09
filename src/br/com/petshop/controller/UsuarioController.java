@@ -31,10 +31,11 @@ public class UsuarioController {
 	@RequestMapping("adicionaUsuario")
 	public String adiciona(@Valid Usuario usuario, BindingResult result) throws ClassNotFoundException {
 		if(result.hasFieldErrors("nome") || result.hasFieldErrors("login") || result.hasFieldErrors("senha") || result.hasFieldErrors("email")) {
-			 return "usuario/formulario";
+			System.out.print("Passando por aqui2");
 	     }
+		System.out.print("Passando por aqui");
 		daoUsuario.adiciona(usuario);
-		return "redirect:listaUsuarios";
+		return "redirect:loginForm";
 	}
 	
 	@RequestMapping("mostraUsuario")

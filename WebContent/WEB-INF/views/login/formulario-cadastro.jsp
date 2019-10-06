@@ -39,9 +39,8 @@
 						<div class="form-group">
 	                    	<input class="form-control" placeholder="Senha" name="senha" type="password" value="">
 	                    </div>
-							<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
+							<input type="submit" value="Cadastrar" class="btn btn-lg btn-primary btn-block">
 						<div class="text-center">
-						<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
 								<br />
 									<a href="loginForm" >Voltar</a>
 								</div>
