@@ -10,31 +10,15 @@ public class Cliente {
     private String nacionalidade, uf, nome, sexo, estadocivil, rua, complemento, municipio, bairro, email;
     private Date nascimento;
 
-    public Cliente(int rg, int cpf, int numeroendereco, int cep, int telefone, Date nascimento, String nacionalidade, String uf, String nome, String sexo, String estadocivil, String rua, String complemento, String municipio, String bairro, String email) {
-         this.rg = rg;
-        this.cpf = cpf;
-        this.numeroendereco = numeroendereco;
-        this.cep = cep;
-        this.telefone = telefone;
-        this.nascimento = nascimento;
-        this.nacionalidade = nacionalidade;
-        this.uf = uf;
-        this.nome = nome;
-        this.sexo = sexo;
-        this.estadocivil = estadocivil;
-        this.rua = rua;
-        this.complemento = complemento;
-        this.municipio = municipio;
-        this.bairro = bairro;
-        this.email = email;
-    }
     public Cliente() {
     	
     }
     public int getId() {
-        return id;
+        return this.id;
     }
-
+    public void setId(int id) {
+    	this.id = id;
+    }
     public int getRg() {
         return rg;
     }
@@ -100,7 +84,7 @@ public class Cliente {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {

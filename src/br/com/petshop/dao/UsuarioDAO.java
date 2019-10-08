@@ -61,9 +61,11 @@ public class UsuarioDAO {
 				usuario.setNome(rs.getString("nome"));
 				usuario.setLogin(rs.getString("login"));
 				
-			}
+				usuarios.add(usuario);
+				
+			}			
 			rs.close();
-			stmt.close();
+			stmt.close();		
 			return usuarios;
 	
 			}catch(SQLException e){
