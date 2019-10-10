@@ -20,7 +20,7 @@
 			<div class="panel panel-primary">
 		      <div class="panel-heading">	
 			      <p align="center">	     
-			      		<img align="center" src="https://d1icd6shlvmxi6.cloudfront.net/gsc/B6VLSH/19/de/25/19de2588b79e4845bcd63a87f7c7ae2e/images/login/u2.jpg?token=cfc9a126b7da73d168441bd9151c4cb8263aad9d3880cee8220c0c9b6bb00c09" style="width: 156px;
+			      		<img align="center" src="https://github.com/ViniciusCaetano123/2019-2_DevWeb09/blob/principal/Images/logo.png?raw=true" style="width: 156px;
 				    height: 133px;">
 				  </p>
 				</div>
