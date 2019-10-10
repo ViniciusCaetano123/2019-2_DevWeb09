@@ -27,7 +27,21 @@ Connection connection;
             throw new RuntimeException(e);
         }
 	}
-	
+	public int totalFuncionario() {
+		try{
+			PreparedStatement stmt = this.connection.prepareStatement("select * from funcionario");
+			ResultSet rs = stmt.executeQuery();
+			int i =0;
+			while(rs.next())
+			{
+
+				i++;
+			}
+				return i;
+			}catch(SQLException e){
+				throw new RuntimeException(e);
+			}	
+	}
 	public List<Funcionario> lista(){
 		try{
 			List<Funcionario> funcionarios = new ArrayList<Funcionario>();

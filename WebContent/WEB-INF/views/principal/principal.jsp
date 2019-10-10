@@ -34,30 +34,25 @@
 		    </div>
 			<div class="col-sm-10">
 			<br>
-				<div class="col-sm-4">
-		          <div class="well">
-		            <p>Text</p> 
-		            <p>Text</p> 
-		            <p>Text</p> 
-		          </div>
+				<div class="row">
+					<div class="col-sm-4">
+			          <div class="well">
+			          	<p> Total de Cliente : ${totalClientes}</p>
+			          </div>
+			        </div>
+			        <div class="col-sm-4">
+			          <div class="well">
+			            <p> Total de Funcionarios : ${totalFuncionarios}</p>
+			          </div>
+			        </div>
+			        <div class="col-sm-4">
+			          <div class="well">
+			            <p> Total de Consultas : ${totalConsultas}</p>
+			          </div>
+			        </div>
+			        <p> </p>
+			        <br>
 		        </div>
-		        <div class="col-sm-4">
-		          <div class="well">
-		            <p>Text</p> 
-		            <p>Text</p> 
-		            <p>Text</p> 
-		          </div>
-		        </div>
-		        <div class="col-sm-4">
-		          <div class="well">
-		            <p>Text</p> 
-		            <p>Text</p> 
-		            <p>Text</p> 
-		          </div>
-		        </div>
-		        aa
-		        <br>
-		        
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4>Clientes</h4>
@@ -74,7 +69,8 @@
 								<th>Data de Nascimento</th>	
 								<th>Nacionalidade</th>		
 								<th> UF</th>	
-								<th> Sexo</th>						
+								<th> Sexo</th>
+								<th> E-mail</th>						
 								<th> </th>	
 				                </tr>
 				        </thead>
@@ -87,12 +83,21 @@
 									<td>${cliente.nacionalidade}</td>
 									<td>${cliente.uf}</td>
 									<td>${cliente.sexo}</td>
-									<td><a href="#"> Ver Mais</a> </td>
+									<td>${cliente.email}</td>
+									<td><a type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" href="mostraCliente?id=${cliente.id}">Ver Mais</a></td>
+									
 								</tr>
 							</c:forEach>
 				        </tbody>
 				    </table>
 				</div>
+			</div>
+			<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+									  <div class="modal-dialog modal-lg">
+									    <div class="modal-content">
+									      
+									    </div>
+									  </div>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">

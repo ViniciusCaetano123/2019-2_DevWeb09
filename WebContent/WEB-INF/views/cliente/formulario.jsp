@@ -23,78 +23,67 @@
 	
 	<div class="container-fluid">
 		<div class="row">
-			<div class="row content">
-		    <div class="col-sm-2 sidenav hidden-xs">
-		      <h2>Pet Shop</h2>
-		      <ul class="nav nav-pills nav-stacked">
-		        <li class="active"><a href="listaPrincipal">Home</a></li>
-		        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
-			      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
-		     </ul><br>
+			<div class="col-2">
+			    <div class="col-sm-2 sidenav hidden-xs">
+			      <h2>Pet Shop</h2>
+			      <ul class="nav nav-pills nav-stacked">
+			        <li class="active"><a href="listaPrincipal">Home</a></li>
+			        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
+				      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
+			     </ul>
+			    </div>
 		    </div>
-			<div class="col-sm-10">
-			
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Primeiro nome</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" value="Mark" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Sobrenome</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Sobrenome" value="Otto" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltipUsername">Usuário</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Usuário" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Por favor, escolha um usuário válido e único.
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationTooltip03">Cidade</label>
-      <input type="text" class="form-control" id="validationTooltip03" placeholder="Cidade" required>
-      <div class="invalid-tooltip">
-        Por favor, informe uma cidade válida.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">Estado</label>
-      <input type="text" class="form-control" id="validationTooltip04" placeholder="Estado" required>
-      <div class="invalid-tooltip">
-        Por favor, informe um estado válido.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="validationTooltip05">CEP</label>
-      <input type="text" class="form-control" id="validationTooltip05" placeholder="CEP" required>
-      <div class="invalid-tooltip">
-        Por favor, informe um CEP válido.
-      </div>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Enviar</button>
-</form>
-					</div>
-				</div>
-			</div>	
+		  
+		    <div class="col-10">					
+					<div class="col-sm-10">		
+					<div style="padding:20px;">
+											<h2>Clientes</h2>
+											<br> 
+											<form action="adicionarCliente" method="post">
+											
+											<div class="form-group">
+													<label for="Nome">Identificador do Usuario(id)</label>  
+													<input type="text" class="form-control"  name="id"  >
+													<form:errors path="clientee.id" cssStyle="color:#B71C1C"/><br />
+												</div>
+												<div class="form-group">
+													<label for="Nome">Nome</label>  
+													<input type="text" class="form-control"  name="nome"  >
+													<form:errors path="clientee.nome" cssStyle="color:#B71C1C"/><br />
+												</div>
+												<div class="form-group">
+													<label for="Login">Nascimento</label>  
+													<input type="text" class="form-control"  name="nascimento"  >
+													<form:errors path="clientee.nascimento" cssStyle="color:#B71C1C"/><br />
+												</div>
+												<div class="form-group">
+													<label for="Senha">Nacionalidade</label>  
+													<input type="text"  class="form-control" name="nacionalidade" >
+													<form:errors path="clientee.nacionalidade" cssStyle="color:#B71C1C"/><br />							
+												</div>
+												<div class="form-group">
+													<label for="uf">UF</label>  
+													<input type="text"  class="form-control" name="uf" >
+													<form:errors path="clientee.uf" cssStyle="color:#B71C1C"/><br />							
+												</div>
+												<div class="form-group">
+													<label for="sexo">sexo</label>  
+													<input type="text"  class="form-control" name="sexo" >
+													<form:errors path="clientee.sexo" cssStyle="color:#B71C1C"/><br />							
+												</div>
+												<div class="form-group">
+													<label for="Altura">Email</label>  
+													<input type="text"  class="form-control" name="email"  >
+													<form:errors path="clientee.email" cssStyle="color:#B71C1C"/><br />
+												</div>
+											<input type="submit" class="btn btn-primary" value="Adicionar">
+											</form>
+										</div>
+				
 			</div>
-		</div>
-	</div>
+			</div>
+			</div>
+		
+	
 </body>
 </html>
