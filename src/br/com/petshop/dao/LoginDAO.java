@@ -18,7 +18,7 @@ public class LoginDAO {
 	
 	public boolean existeUsuario(Usuario usuario){
 		
-			String sql = "select * from usuarios where login= ? and senha = MD5(?)";
+			String sql = "select * from usuario where login= ? and senha = ?";
 			
 			try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
