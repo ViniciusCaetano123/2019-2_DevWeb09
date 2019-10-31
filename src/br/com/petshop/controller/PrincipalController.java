@@ -48,6 +48,9 @@ public class PrincipalController{
 	}
 	@RequestMapping("alterarCliente")
 	public String alterar(@Valid Cliente cliente) throws ClassNotFoundException{
+		System.out.println(cliente);
+		System.out.println(cliente.getEmail());
+		System.out.println(cliente.getId());
 		daoCliente.altera(cliente);		
 		return "redirect:listaPrincipal";
 	}

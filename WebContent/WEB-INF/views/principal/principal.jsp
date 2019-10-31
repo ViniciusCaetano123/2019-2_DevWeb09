@@ -114,16 +114,22 @@
 								<th>Nome</th>	
 								<th>Data de Nascimento</th>	
 								<th> Nacionalidade</th>		
-								<th> UF</th>	
-								<th> Sexo</th>						
+								<th> E-mail</th>	
+								<th> CPF</th>	
+								<th> Telefone</th>						
 								<th></th>	
 				                </tr>
 				        </thead>
 				        <tbody>
-					        <c:forEach items="${funcionarios}" var="cliente">
+					        <c:forEach items="${funcionarios}" var="funcionario">
 								<tr>
-									<td>${cliente.id}</td>
-									<td>${cliente.nome}</td>
+									<td>${funcionario.id}</td>
+									<td>${funcionario.nome}</td>
+									<td>${funcionario.dataNasc } </td>
+									<td>${funcionario.nacionalidade} </td>
+									<td> ${funcionario.email }</td>
+									<td> ${funcionario.cpf }</td>
+									<th>  ${funcionario.telefone }</th>	
 								</tr>
 							</c:forEach>
 				        </tbody>

@@ -55,6 +55,12 @@ Connection connection;
 				
 				funcionario.setId(rs.getInt("id"));
 				funcionario.setNome(rs.getString("nome"));
+				funcionario.setNacionalidade(rs.getString("nacionalidade"));
+				funcionario.setDataNasc(rs.getString("dataNasc"));
+				funcionario.setCpf(rs.getString("cpf"));
+				funcionario.setTelefone(rs.getString("telefone"));
+				funcionario.setEmail(rs.getString("email"));
+				funcionario.setDataNasc(rs.getString("dataNasc"));
 				funcionarios.add(funcionario);
 			}
 			rs.close();

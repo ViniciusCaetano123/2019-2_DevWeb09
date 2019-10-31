@@ -14,7 +14,16 @@
 <body>
 									<div style="padding:20px;">
 											<form action="alterarCliente" method="post">
-											
+												<div class="form-group">
+													<label for="Login">Id: </label>  
+													<input type="text" class="form-control"  name="id" value="${clientee.id}" >
+													<form:errors path="clientee.nascimento" cssStyle="color:#B71C1C"/><br />
+												</div>
+												<div class="form-group">
+													<label for="Login">Nome: </label>  
+													<input type="text" class="form-control"  name="nome" value="${clientee.nome}" >
+													<form:errors path="clientee.nascimento" cssStyle="color:#B71C1C"/><br />
+												</div>
 												<div class="form-group">
 													<label for="Login">Nascimento</label>  
 													<input type="text" class="form-control"  name="nascimento" value="${clientee.nascimento}" >
