@@ -12,37 +12,61 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-2">
+			    <div class="col-sm-2 sidenav hidden-xs">
+			      <h2>Pet Shop</h2>
+			      <ul class="nav nav-pills nav-stacked">
+			        <li class="active"><a href="listaPrincipal">Home</a></li>
+			        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
+				      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
+			     </ul>
+			    </div>
+		    </div>
+		  
+		    <div class="col-10">					
+					<div class="col-sm-10">		
+					<div style="padding:20px;">
+											<h2>Cliente</h2>
 									<div style="padding:20px;">
 											<form action="alterarCliente" method="post">
-											
+											<input type="hidden" name="id" value="${cliente.id}" />
+											<div class="form-group">
+													<label for="Login">Nome</label>  
+													<input type="text" class="form-control"  name="nome" value="${cliente.nome}" >
+												
+												</div>
 												<div class="form-group">
 													<label for="Login">Nascimento</label>  
-													<input type="text" class="form-control"  name="nascimento" value="${clientee.nascimento}" >
-													<form:errors path="clientee.nascimento" cssStyle="color:#B71C1C"/><br />
+													<input type="text" class="form-control"  name="nascimento" value="${cliente.nascimento}" >
+												
 												</div>
 												<div class="form-group">
 													<label for="Senha">Nacionalidade</label>  
-													<input type="text"  class="form-control" name="nacionalidade" value="${clientee.nacionalidade}">
-													<form:errors path="clientee.nacionalidade" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="nacionalidade" value="${cliente.nacionalidade}">
+																			
 												</div>
 												<div class="form-group">
 													<label for="uf">UF</label>  
-													<input type="text"  class="form-control" name="uf" value="${clientee.uf}">
-													<form:errors path="clientee.uf" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="uf" value="${cliente.uf}">
 												</div>
 												<div class="form-group">
 													<label for="sexo">sexo</label>  
-													<input type="text"  class="form-control" name="sexo" value="${clientee.sexo}">
-													<form:errors path="clientee.sexo" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="sexo" value="${cliente.sexo}">
+																	
 												</div>
 												<div class="form-group">
 													<label for="Altura">Email</label>  
-													<input type="text"  class="form-control" name="email" value="${clientee.email}" >
-													<form:errors path="clientee.email" cssStyle="color:#B71C1C"/><br />
+													<input type="text"  class="form-control" name="email" value="${cliente.email}" >
+													
 												</div>
 											<input type="submit" class="btn btn-primary" value="Alterar">
-											<a href="removerCliente?id=${clientee.id}" class="btn btn-primary" > Exlcuir</a>
+											<a href="removerCliente?id=${cliente.id}" class="btn btn-primary" > Exlcuir</a>
 											</form>
+										</div>
+										</div>
+										</div>
 										</div>
 											
 </body>

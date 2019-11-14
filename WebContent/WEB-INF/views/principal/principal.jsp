@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
 <style>
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
@@ -24,10 +25,19 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="row content">
-		    <div class="col-sm-2 sidenav hidden-xs">
+		    <div class="col-sm-2 sidenav hidden-xs" style="height:100%;background:#ebf3f9;">
 		      <h2>Pet Shop</h2>
 		      <ul class="nav nav-pills nav-stacked">
 		        <li class="active"><a href="#section1">Home</a></li>
+		         <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cadastrar
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href=formularioCli>Cliente</a></li>
+      <li><a href="formularioFunc">Funcionario</a></li>
+      <li><a href="#">Animal</a></li>
+    </ul>
+  </div>
 		        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
 			      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
 		     </ul><br>
@@ -58,8 +68,8 @@
 					<h4>Clientes</h4>
 				</div>
 				<div class="panel-body">
-				<a href="formulario"><button type="button" class="btn btn-primary btn-sm">Criar Novo Cliente</button></a>
-				<br /><br />				
+				
+					
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
 				        	<tr>
@@ -84,7 +94,7 @@
 									<td>${cliente.uf}</td>
 									<td>${cliente.sexo}</td>
 									<td>${cliente.email}</td>
-									<td><a type="button"  data-toggle="modal" data-target=".bd-example-modal-lg" href="mostraCliente?id=${cliente.id}">Ver Mais</a></td>
+									<td><a type="button"  href="mostraCliente?id=${cliente.id}">Ver Mais</a></td>
 									
 								</tr>
 							</c:forEach>
@@ -97,8 +107,8 @@
 					<h4>Funcionarios</h4>
 				</div>
 				<div class="panel-body">
-				<a href="novoCaso"><button type="button" class="btn btn-primary btn-sm">Criar Novo Funcionario</button></a>
-				<br /><br />				
+		
+						
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
 				        	<tr>
@@ -117,12 +127,54 @@
 								<tr>
 									<td>${funcionario.id}</td>
 									<td>${funcionario.nome}</td>
+									<td>${funcionario.nascimento}</td>
+									<td>${funcionario.nacionalidade}</td>
+									<td>${funcionario.uf}</td>
+									<td>${funcionario.sexo}</td>
+									<td><a type="button"   href="mostraFuncionario?id=${funcionario.id}"">Ver Mais</a></td>
 								</tr>
 							</c:forEach>
 				        </tbody>
 				    </table>
 				</div>
 			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Animais</h4>
+				</div>
+				<div class="panel-body">
+				
+					
+					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+				    	<thead>
+				        	<tr>
+								<!--  <th>Id</th>  -->	
+								<th> Dono</th>
+								<th>idDono</th>	
+								<th>Animal</th>	
+								<th>Porte</th>		
+								<th> Raça</th>	
+								<th> Sexo</th>	
+								<th> </th>	
+				                </tr>
+				        </thead>
+				        <tbody>
+					        <c:forEach items="${animais}" var="animal">
+								<tr>
+									<td>${animal.funcionario.nome}</td>
+									<td>${animal.idDono}</td>
+									<td>${animal.nome}</td>
+									<td>${animal.porte}</td>
+									<td>${animal.raca}</td>
+									<td>${animal.sexo}</td>
+									<td><a type="button"  href="">Ver Mais</a></td>
+									
+								</tr>
+							</c:forEach>
+				        </tbody>
+				    </table>
+				</div>
+			</div>			
 			</div>
 		</div>	
 	</div>
