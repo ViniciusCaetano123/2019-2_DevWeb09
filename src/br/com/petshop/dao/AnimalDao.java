@@ -107,7 +107,7 @@ public class AnimalDao {
 				Animal animal = new Animal();
 				Funcionario funcionario = new Funcionario();
 				
-				//animal.setFuncionario("nome"));
+				
 				System.out.print(animal.funcionario);
 				animal.setIdDono(rs.getInt("idDono"));
 				animal.setNome(rs.getString("nome"));
