@@ -39,42 +39,31 @@
 					<div style="padding:20px;">
 											<h2>Clientes</h2>
 											<br> 
-											<form action="adicionarCliente" method="post">
-											
-											<div class="form-group">
-													<label for="Nome">Identificador do Usuario(id)</label>  
-													<input type="text" class="form-control"  name="id"  >
-													<form:errors path="clientee.id" cssStyle="color:#B71C1C"/><br />
-												</div>
+											<form action="adicionarCliente" method="post">											
 												<div class="form-group">
 													<label for="Nome">Nome</label>  
-													<input type="text" class="form-control"  name="nome"  >
-													<form:errors path="clientee.nome" cssStyle="color:#B71C1C"/><br />
+													<input type="text" class="form-control"  name="nome" value="${cliente.nome}"  >
 												</div>
 												<div class="form-group">
 													<label for="Login">Nascimento</label>  
-													<input type="text" class="form-control"  name="nascimento"  >
-													<form:errors path="clientee.nascimento" cssStyle="color:#B71C1C"/><br />
+													<input type="text" class="form-control"  name="nascimento"  value="${cliente.nascimento}"  >
 												</div>
 												<div class="form-group">
 													<label for="Senha">Nacionalidade</label>  
-													<input type="text"  class="form-control" name="nacionalidade" >
-													<form:errors path="clientee.nacionalidade" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="nacionalidade"  value="${cliente.nacionalidade}"  >
 												</div>
 												<div class="form-group">
 													<label for="uf">UF</label>  
-													<input type="text"  class="form-control" name="uf" >
-													<form:errors path="clientee.uf" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="uf"  value="${cliente.uf}"  >
+																			
 												</div>
 												<div class="form-group">
 													<label for="sexo">sexo</label>  
-													<input type="text"  class="form-control" name="sexo" >
-													<form:errors path="clientee.sexo" cssStyle="color:#B71C1C"/><br />							
+													<input type="text"  class="form-control" name="sexo"  value="${cliente.sexo}" >
 												</div>
 												<div class="form-group">
 													<label for="Altura">Email</label>  
-													<input type="text"  class="form-control" name="email"  >
-													<form:errors path="clientee.email" cssStyle="color:#B71C1C"/><br />
+													<input type="text"  class="form-control" name="email"  value="${cliente.email}"  >
 												</div>
 											<input type="submit" class="btn btn-primary" value="Adicionar">
 											</form>

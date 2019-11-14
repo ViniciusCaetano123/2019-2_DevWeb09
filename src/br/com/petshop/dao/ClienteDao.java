@@ -35,7 +35,7 @@ public class ClienteDao {
 	public void remove(Cliente cliente){
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement
-			("delete from cliente where id = ?");
+			("delete from clientee where id = ?");
 			
 			stmt.setInt(1, cliente.getId());
 			stmt.execute();
@@ -48,7 +48,7 @@ public class ClienteDao {
 	}
 	
 	public void adiciona(Cliente cliente){
-		String sql = "insert into cliente (id,nome, nascimento,nacionalidade , uf, sexo,email) " +
+		String sql = "insert into clientee (id,nome, nascimento,nacionalidade , uf, sexo,email) " +
 					"values (?, ?, ?, ?,?,?,?)";
 		
 		try{
@@ -69,7 +69,7 @@ public class ClienteDao {
 	
 	public int totalCliente() {
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from clientee");
 			ResultSet rs = stmt.executeQuery();
 			int i =0;
 			while(rs.next())
@@ -86,7 +86,7 @@ public class ClienteDao {
 
 	
 	public void altera(Cliente cliente){
-		String sql = "update cliente set nome=? , nascimento=?, nacionalidade=?, uf=?, sexo=?, email=? where id=?";
+		String sql = "update clientee set nome=? , nascimento=?, nacionalidade=?, uf=?, sexo=?, email=? where id=?";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -110,7 +110,7 @@ public class ClienteDao {
 	public Cliente buscaPorId(int id){
 		
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from cliente");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from clientee");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
@@ -142,7 +142,7 @@ public class ClienteDao {
 		try{
 			List<Cliente> clientes = new ArrayList<Cliente>();
 			PreparedStatement stmt = this.connection.prepareStatement
-			("SELECT * FROM cliente");
+			("SELECT * FROM clientee");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())

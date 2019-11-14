@@ -91,14 +91,7 @@
 				        </tbody>
 				    </table>
 				</div>
-			</div>
-			<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-									  <div class="modal-dialog modal-lg">
-									    <div class="modal-content">
-									      
-									    </div>
-									  </div>
-			</div>
+			</div>			
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4>Funcionarios</h4>
@@ -120,10 +113,10 @@
 				                </tr>
 				        </thead>
 				        <tbody>
-					        <c:forEach items="${funcionarios}" var="cliente">
+					        <c:forEach items="${funcionarios}" var="funcionario">
 								<tr>
-									<td>${cliente.id}</td>
-									<td>${cliente.nome}</td>
+									<td>${funcionario.id}</td>
+									<td>${funcionario.nome}</td>
 								</tr>
 							</c:forEach>
 				        </tbody>
