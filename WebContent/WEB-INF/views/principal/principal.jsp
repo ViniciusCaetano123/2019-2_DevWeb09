@@ -196,24 +196,26 @@
 								<!--  <th>Id</th>  -->	
 								<th> Nome Cliente </th>
 								<th> Nome Funcionario </th>
-								<th></th>		
-								<th> Raça</th>	
-								<th> Sexo</th>	
+								<th>Serviço</th>		
+								<th> Data </th>
 								<th> </th>	
 				                </tr>
 				        </thead>
 				        <tbody>
-					        <c:forEach items="${animais}" var="animal">
+					        <c:forEach items="${consultas}" var="consulta">
 								<c:forEach items="${clientes}" var="cliente">
-									<c:if test="${animal.idDono == cliente.id}">
+									<c:if test="${consulta.idCliente == cliente.id}">
 										<td>${cliente.nome}</td>
 									</c:if>
 								 </c:forEach>
-									<td>${animal.nome}</td>
-									<td>${animal.porte}</td>
-									<td>${animal.raca}</td>
-									<td>${animal.sexo}</td>
-									<td><a type="button"  href="mostraAnimal?id=${animal.id}&idDono=${animal.idDono}">Ver Mais</a></td>
+									<c:forEach items="${funcionarios}" var="funcionario">
+									<c:if test="${consulta.idFuncionario == funcionario.id}">
+										<td>${funcionario.nome}</td>
+									</c:if>
+									 </c:forEach>
+									<td>${consulta.servico}</td>
+									<td>${consulta.Data}</td>
+									<td><a type="button"  href="mostraConsulta?id=${consulta.id}&idCliente=${consulta.idCliente}}&idFuncionario=${consulta.idFuncionario>Ver Mais</a></td>
 								</tr>
 							</c:forEach>
 				        </tbody>
