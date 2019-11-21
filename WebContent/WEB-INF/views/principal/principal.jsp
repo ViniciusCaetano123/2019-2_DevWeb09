@@ -162,7 +162,42 @@
 								<th> Nome</th>
 								<th>Animal</th>	
 								<th>Porte</th>		
-								<th> Ra�a</th>	
+								<th> Raça</th>	
+								<th> Sexo</th>	
+								<th> </th>	
+				                </tr>
+				        </thead>
+				        <tbody>
+					        <c:forEach items="${animais}" var="animal">
+								<c:forEach items="${clientes}" var="cliente">
+									<c:if test="${animal.idDono == cliente.id}">
+										<td>${cliente.nome}</td>
+									</c:if>
+								 </c:forEach>
+									<td>${animal.nome}</td>
+									<td>${animal.porte}</td>
+									<td>${animal.raca}</td>
+									<td>${animal.sexo}</td>
+									<td><a type="button"  href="mostraAnimal?id=${animal.id}&idDono=${animal.idDono}">Ver Mais</a></td>
+								</tr>
+							</c:forEach>
+				        </tbody>
+				    </table>
+				</div>
+			</div>	
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Consultas</h4>
+				</div>
+				<div class="panel-body">
+					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+				    	<thead>
+				        	<tr>
+								<!--  <th>Id</th>  -->	
+								<th> Nome Cliente </th>
+								<th> Nome Funcionario </th>
+								<th></th>		
+								<th> Raça</th>	
 								<th> Sexo</th>	
 								<th> </th>	
 				                </tr>
