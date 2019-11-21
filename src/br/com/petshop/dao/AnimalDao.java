@@ -35,7 +35,7 @@ public class AnimalDao {
     public void remove(Animal animal){
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement
-			("delete from animall where id = ?");
+			("delete from animal where id = ?");
 			
 			stmt.setInt(1, animal.getId());
 			stmt.execute();
@@ -45,8 +45,9 @@ public class AnimalDao {
 			throw new RuntimeException(e);
 		}
 	}
+    
 	public void adiconar(Animal animal){
-		String sql = "insert into animall (nome,porte,raca,sexo,id_dono)	values(?,?,?,?,?)";
+		String sql = "insert into animal (nome,porte,raca,sexo,idDono)	values(?,?,?,?,?)";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -61,6 +62,7 @@ public class AnimalDao {
 			throw new RuntimeException (e);
 		}
 	}
+	
 	public int totalFuncionario(){
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement("select * from animal");
@@ -77,7 +79,7 @@ public class AnimalDao {
 	}
 
 	public void altera(Animal animal){
-		String sql = "update animall set nome=?,porte=?,raca=?,sexo=?,id_dono=? where id=?";
+		String sql = "update animal set nome=?,porte=?,raca=?,sexo=?,idDono=? where id=?";
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
 			
@@ -99,16 +101,15 @@ public class AnimalDao {
 		try{
 			List<Animal> animais = new ArrayList<Animal>();
 			PreparedStatement stmt = this.connection.prepareStatement
-			("select funcionarioo.nome,animall.idDono, animall.nome,animall.porte,animall.raca,animall.sexo from animall join funcionarioo on animall.idDono = funcionarioo.id");
+			("select animal.id,animal.idDono, animal.nome,animal.porte,animal.raca,animal.sexo from "
+					+ "animal join cliente on animal.idDono = cliente.id");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
 			{
 				Animal animal = new Animal();
-				Funcionario funcionario = new Funcionario();
 				
-				
-				System.out.print(animal.funcionario);
+				animal.setId(rs.getInt("id"));
 				animal.setIdDono(rs.getInt("idDono"));
 				animal.setNome(rs.getString("nome"));
 				animal.setPorte(rs.getString("porte"));
@@ -128,7 +129,7 @@ public class AnimalDao {
 	public Animal buscaPorId(int id){
 		
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from animall");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from animal");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())

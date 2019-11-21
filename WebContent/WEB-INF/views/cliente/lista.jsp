@@ -35,7 +35,6 @@
 											<div class="form-group">
 													<label for="Login">Nome</label>  
 													<input type="text" class="form-control"  name="nome" value="${cliente.nome}" >
-												
 												</div>
 												<div class="form-group">
 													<label for="Login">Nascimento</label>  

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.petshop.dao.AnimalDao;
 import br.com.petshop.dao.ClienteDao;
-import br.com.petshop.dao.ConsultaDAO;
+import br.com.petshop.dao.ConsultaDao;
 import br.com.petshop.dao.FuncionarioDao;
 import br.com.petshop.dao.FuncionarioDao;
 import br.com.petshop.dao.UsuarioDAO;
@@ -30,11 +30,10 @@ public class PrincipalController{
 	FuncionarioDao daoFuncionario;
 	
 	@Autowired
-	ConsultaDAO daoConsulta;
-	
-	@Autowired
 	AnimalDao daoAnimal;
 	
+	@Autowired
+	ConsultaDao daoConsulta;
 	
 	@RequestMapping("listaPrincipal")
 	public String listaPrincipal(Model modelCliente, Model modelFuncionario, Model modelConsulta, Model modelAnimal) {
@@ -42,8 +41,9 @@ public class PrincipalController{
 		modelFuncionario.addAttribute("funcionarios", daoFuncionario.lista()); 
 		modelCliente.addAttribute("totalClientes", daoCliente.totalCliente());
 		modelFuncionario.addAttribute("totalFuncionarios", daoFuncionario.totalFuncionario()); 
-		modelConsulta.addAttribute("totalConsultas", daoConsulta.totalConsulta());
 		modelAnimal.addAttribute("animais",daoAnimal.lista());
+		modelConsulta.addAttribute("consultas",daoConsulta.lista());
+		modelConsulta.addAttribute("totalConsultas",daoConsulta.totalConsultas());
 		return "principal/principal";
 	}
 	@RequestMapping("formularioCli")
@@ -58,6 +58,18 @@ public class PrincipalController{
 	@RequestMapping("formularioFunc")
 	public String formularioFunc() throws ClassNotFoundException{
 		return "funcionario/formulario";
+	}
+	
+	@RequestMapping("formularioAnimal")
+	public String formularioAnimal(Model modeAnimal) throws ClassNotFoundException{
+		modeAnimal.addAttribute("clientes", daoCliente.lista()); 
+		return "animal/formulario";
+	}
+	@RequestMapping("formularioConsulta")
+	public String formularioConsulta(Model modelConsulta ) throws ClassNotFoundException{
+		modelConsulta.addAttribute("clientes", daoCliente.lista()); 
+		modelConsulta.addAttribute("funcionarios", daoFuncionario.lista()); 
+		return "consulta/formulario";
 	}
 	
 }

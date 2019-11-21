@@ -13,8 +13,7 @@ import br.com.petshop.model.Cliente;
 public class ClienteController {
 	
 	@Autowired
-	ClienteDao daoCliente;
-	
+	ClienteDao daoCliente;	
 	
 	
 	@RequestMapping("mostraCliente")

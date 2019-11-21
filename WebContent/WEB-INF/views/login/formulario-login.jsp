@@ -27,13 +27,17 @@
 		      <div class="panel-body">
 			      <form action="efetuaLogin" method="post" >
 				     <fieldset>
-						<div class="form-group">
-	                  		<input class="form-control" placeholder="Login" name="login" type="text" autofocus>
-	                    </div>
-						<div class="form-group">
-	                    	<input class="form-control" placeholder="Senha" name="senha" type="password" value="">
-	                    </div>
-							<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
+						<div class="input-group">
+						    <span class="input-group-addon" style="background: #337ab7;border: #337ab7;"><i class="glyphicon glyphicon-user" style="color:#fff;"></i></span>
+						    <input id="email" type="text" class="form-control" name="login" placeholder="Login" >
+						  </div>
+						  <br>
+						  <div class="input-group">
+						    <span class="input-group-addon" style="background: #337ab7;border: #337ab7;"><i class="glyphicon glyphicon-lock" style="color:#fff;"></i></span>
+						    <input id="password" type="password" class="form-control" name="senha" placeholder="Password" >
+						  </div>
+						  <br>
+							<input type="submit" value="Entrar" class="btn btn-lg btn-primary btn-block">
 						<div class="text-center">
 								<br />
 									<a href="mostraTelaEnviarEmail" >Esqueci minha senha</a></br>

@@ -35,7 +35,7 @@ public class FuncionarioDao {
 	public void remove(Funcionario funcionario){
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement
-			("delete from funcionarioo where id = ?");
+			("delete from funcionario where id = ?");
 			
 			stmt.setInt(1, funcionario.getId());
 			stmt.execute();
@@ -48,7 +48,7 @@ public class FuncionarioDao {
 	}
 	
 	public void adiciona(Funcionario funcionario){
-		String sql = "insert into funcionarioo (id,nome, nascimento,nacionalidade , uf, sexo,email) " +
+		String sql = "insert into funcionario (id,nome, nascimento,nacionalidade , uf, sexo,email) " +
 					"values (?, ?, ?, ?,?,?,?)";
 		
 		try{
@@ -69,7 +69,7 @@ public class FuncionarioDao {
 	
 	public int totalFuncionario() {
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from funcionarioo");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from funcionario");
 			ResultSet rs = stmt.executeQuery();
 			int i =0;
 			while(rs.next())
@@ -86,7 +86,7 @@ public class FuncionarioDao {
 
 	
 	public void altera(Funcionario funcionario){
-		String sql = "update funcionarioo set nome=? , nascimento=?, nacionalidade=?, uf=?, sexo=?, email=? where id=?";
+		String sql = "update funcionario set nome=? , nascimento=?, nacionalidade=?, uf=?, sexo=?, email=? where id=?";
 		
 		try{
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -110,7 +110,7 @@ public class FuncionarioDao {
 	public Funcionario buscaPorId(int id){
 		
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("select * from funcionarioo");
+			PreparedStatement stmt = this.connection.prepareStatement("select * from funcionario");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
@@ -142,7 +142,7 @@ public class FuncionarioDao {
 		try{
 			List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 			PreparedStatement stmt = this.connection.prepareStatement
-			("SELECT * FROM funcionarioo");
+			("SELECT * FROM funcionario");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())

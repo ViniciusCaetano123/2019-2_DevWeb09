@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  
+  <link rel="stylesheet" href="/2019-2_DevWeb09/resour/assets/css/style.css"> 
+  <link rel="stylesheet" href="/2019-2_DevWeb09/resour/assets/css/cs-skin-elastic.css"> 
+  <script src="/petshop/resour/js/main.js"></script>
+  <script src="/petshop/resour/js/widgets.js"></script>
 <style>
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
@@ -18,26 +21,35 @@
 .navbar-inverse .navbar-brand {
     color: #fff;
 }
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height:600px;}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    
+
 </style>
 </head>
 <body>
+
+       
 	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="row content">
-		    <div class="col-sm-2 sidenav hidden-xs" style="height:100%;background:#ebf3f9;">
+		    <div class="col-sm-2 sidenav hidden-xs" >
 		      <h2>Pet Shop</h2>
 		      <ul class="nav nav-pills nav-stacked">
 		        <li class="active"><a href="#section1">Home</a></li>
-		         <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cadastrar
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href=formularioCli>Cliente</a></li>
-      <li><a href="formularioFunc">Funcionario</a></li>
-      <li><a href="#">Animal</a></li>
-    </ul>
-  </div>
+		         
 		        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
 			      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
 		     </ul><br>
@@ -45,6 +57,23 @@
 			<div class="col-sm-10">
 			<br>
 				<div class="row">
+				<div class="col-lg-4 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-five">
+                                    <div class="stat-icon dib flat-color-4">
+                                        <i class="pe-7s-users"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-text"><span class="count">2986</span></div>
+                                            <div class="stat-heading">Clients</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 					<div class="col-sm-4">
 			          <div class="well">
 			          	<p> Total de Cliente : ${totalClientes}</p>
@@ -149,8 +178,7 @@
 				    	<thead>
 				        	<tr>
 								<!--  <th>Id</th>  -->	
-								<th> Dono</th>
-								<th>idDono</th>	
+								<th> Nome</th>
 								<th>Animal</th>	
 								<th>Porte</th>		
 								<th> Raça</th>	
@@ -160,15 +188,16 @@
 				        </thead>
 				        <tbody>
 					        <c:forEach items="${animais}" var="animal">
-								<tr>
-									<td>${animal.funcionario.nome}</td>
-									<td>${animal.idDono}</td>
+								<c:forEach items="${clientes}" var="cliente">
+									<c:if test="${animal.idDono == cliente.id}">
+										<td>${cliente.nome}</td>
+									</c:if>
+								 </c:forEach>
 									<td>${animal.nome}</td>
 									<td>${animal.porte}</td>
 									<td>${animal.raca}</td>
 									<td>${animal.sexo}</td>
-									<td><a type="button"  href="">Ver Mais</a></td>
-									
+									<td><a type="button"  href="mostraAnimal?id=${animal.id}&idDono=${animal.idDono}">Ver Mais</a></td>
 								</tr>
 							</c:forEach>
 				        </tbody>

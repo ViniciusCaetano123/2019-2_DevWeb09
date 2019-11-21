@@ -25,7 +25,7 @@
       </mvc:interceptors>
       
       <mvc:annotation-driven/>
-		<mvc:resources mapping="/resources/**" location="resources/"/>
+		<mvc:resources mapping="/resour/**" location="resour/"/>
       
       <bean id="mysqlDataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
