@@ -10,10 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="/2019-2_DevWeb09/resour/assets/css/style.css"> 
-  <link rel="stylesheet" href="/2019-2_DevWeb09/resour/assets/css/cs-skin-elastic.css"> 
-  <script src="/petshop/resour/js/main.js"></script>
-  <script src="/petshop/resour/js/widgets.js"></script>
+ 
 <style>
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
@@ -57,23 +54,7 @@
 			<div class="col-sm-10">
 			<br>
 				<div class="row">
-				<div class="col-lg-4 col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-4">
-                                        <i class="pe-7s-users"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
-                                            <div class="stat-heading">Clients</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+				
 					<div class="col-sm-4">
 			          <div class="well">
 			          	<p> Total de Cliente : ${totalClientes}</p>

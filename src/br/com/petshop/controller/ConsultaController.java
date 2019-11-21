@@ -30,7 +30,7 @@ public class ConsultaController {
 		modelConsulta.addAttribute("consulta", daoConsulta.buscaPorId(id));
 		modelConsulta.addAttribute("cliente", daoCliente.buscaPorId(idCliente));
 		modelConsulta.addAttribute("funcionario", daoFuncionario.buscaPorId(idFuncionario));
-		return "cliente/lista";
+		return "consulta/lista";
 	}
 	@RequestMapping("adicionarConsulta")
 	public String adicionar(@Valid Consulta consulta) throws ClassNotFoundException{

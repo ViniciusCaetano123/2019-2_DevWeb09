@@ -10,10 +10,11 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import br.com.petshop.model.Cliente;
 import br.com.petshop.model.Consulta;
 
+@Repository
 public class ConsultaDao {
 Connection connection;
 	
@@ -44,7 +45,7 @@ Connection connection;
 	}
 	public int totalConsultas() {
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;select * from cliente");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT consulta.idCliente,consulta.idFuncionario,cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;");
 			ResultSet rs = stmt.executeQuery();
 			int i =0;
 			while(rs.next())
@@ -80,7 +81,7 @@ Connection connection;
 public Consulta buscaPorId(int id){
 		
 		try{
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT consulta.idCliente,consulta.idFuncionario,cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())
@@ -110,7 +111,7 @@ public Consulta buscaPorId(int id){
 		try{
 			List<Consulta> consultas = new ArrayList<Consulta>();
 			PreparedStatement stmt = this.connection.prepareStatement
-			("SELECT cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;");
+			("SELECT consulta.idCliente,consulta.idFuncionario,cliente.nome, funcionario.nome, consulta.servico, consulta.Data, consulta.id FROM consulta join cliente on cliente.id = consulta.idCliente join funcionario on funcionario.id = consulta.idFuncionario;");
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next())

@@ -61,8 +61,8 @@ public class PrincipalController{
 	}
 	
 	@RequestMapping("formularioAnimal")
-	public String formularioAnimal(Model modeAnimal) throws ClassNotFoundException{
-		modeAnimal.addAttribute("clientes", daoCliente.lista()); 
+	public String formularioAnimal(Model modeCliente) throws ClassNotFoundException{
+		modeCliente.addAttribute("clientes", daoCliente.lista()); 
 		return "animal/formulario";
 	}
 	@RequestMapping("formularioConsulta")
