@@ -33,7 +33,7 @@ public class AnimalController {
 		System.out.print(cliente.getId());
 		System.out.print(animal.getIdDono());
 		daoAnimal.adiconar(animal);
-		return "";
+		return "redirect:listaPrincipal";
 	}
 	@RequestMapping("removerAnimal")
 	public String remover(@Valid Animal animal)throws ClassNotFoundException {

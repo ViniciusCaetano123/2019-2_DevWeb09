@@ -45,8 +45,7 @@
 		    <div class="col-sm-2 sidenav hidden-xs" >
 		      <h2>Pet Shop</h2>
 		      <ul class="nav nav-pills nav-stacked">
-		        <li class="active"><a href="#section1">Home</a></li>
-		         
+		        <li class="active"><a href="#section1">Home</a></li>		         
 		        <li><a href="#"><span class="glyphicon glyphicon-user" style="color:#337ab7"></span style="color:#fff">${usuarioLogado.login}</a></li>
 			      <li><a href="loginForm"><span class="glyphicon glyphicon-log-in" style="color:#337ab7"></span style="color:#fff"> Sair</a></li>
 		     </ul><br>
@@ -79,7 +78,8 @@
 				</div>
 				<div class="panel-body">
 				
-					
+					<a href="formularioCli"><button type="button" class="btn btn-primary btn-sm">Criar Cliente</button></a>
+		<br /><br />
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
 				        	<tr>
@@ -117,7 +117,8 @@
 					<h4>Funcionarios</h4>
 				</div>
 				<div class="panel-body">
-		
+					<a href="formularioFunc"><button type="button" class="btn btn-primary btn-sm">Criar Funcionario</button></a>
+		<br /><br />
 						
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
@@ -153,7 +154,8 @@
 					<h4>Animais</h4>
 				</div>
 				<div class="panel-body">
-				
+				<a href="formularioAnimal"><button type="button" class="btn btn-primary btn-sm">Criar Animal</button></a>
+		<br /><br />
 					
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
@@ -190,13 +192,16 @@
 					<h4>Consultas</h4>
 				</div>
 				<div class="panel-body">
+					<a href="formularioConsulta"><button type="button" class="btn btn-primary btn-sm">Criar Consulta</button></a>
+		<br /><br />
+					
 					<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 				    	<thead>
 				        	<tr>
 								<!--  <th>Id</th>  -->	
 								<th> Nome Cliente </th>
 								<th> Nome Funcionario </th>
-								<th>ServiÃ§o</th>		
+								<th>Serviço</th>		
 								<th> Data </th>
 								<th> </th>	
 				                </tr>
@@ -214,9 +219,9 @@
 									</c:if>
 									 </c:forEach>
 									<td>${consulta.servico}</td>
-									<td>${consulta.Data}</td>
-									<td><a type="button"  href="mostraConsulta?id=${consulta.id}&idCliente=${consulta.idCliente}}&idFuncionario=${consulta.idFuncionario>Ver Mais</a></td>
-								</tr>
+									<td>${consulta.data}</td>
+									<td><a type="button"  href="mostraConsulta?id=${consulta.id}&idCliente=${consulta.idCliente}&idFuncionario=${consulta.idFuncionario}">Ver Mais</a></td>
+							</tr>
 							</c:forEach>
 				        </tbody>
 				    </table>

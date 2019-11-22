@@ -30,6 +30,8 @@ public class ConsultaController {
 		modelConsulta.addAttribute("consulta", daoConsulta.buscaPorId(id));
 		modelConsulta.addAttribute("cliente", daoCliente.buscaPorId(idCliente));
 		modelConsulta.addAttribute("funcionario", daoFuncionario.buscaPorId(idFuncionario));
+		modelConsulta.addAttribute("clientes", daoCliente.lista());
+		modelConsulta.addAttribute("funcionarios", daoFuncionario.lista());
 		return "consulta/lista";
 	}
 	@RequestMapping("adicionarConsulta")
@@ -44,6 +46,10 @@ public class ConsultaController {
 	}
 	@RequestMapping("alterarConsulta")
 	public String alterar(@Valid Consulta consulta) throws ClassNotFoundException{
+		System.out.println(consulta.getIdCliente());
+		System.out.println(consulta.getIdFuncionario());
+		System.out.println(consulta.getServico());
+		System.out.println(consulta.getData());
 		daoConsulta.altera(consulta);		
 		return "redirect:listaPrincipal";
 	}

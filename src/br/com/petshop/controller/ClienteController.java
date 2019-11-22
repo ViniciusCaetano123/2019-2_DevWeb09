@@ -28,7 +28,6 @@ public class ClienteController {
 	}
 	@RequestMapping("removerCliente")
 	public String remover(@Valid Cliente cliente)throws ClassNotFoundException {
-		System.out.print(cliente.getId());
 		daoCliente.remove(cliente);
 		return "redirect:listaPrincipal";
 	}
